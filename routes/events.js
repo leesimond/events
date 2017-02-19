@@ -38,7 +38,6 @@ router.post('/', middleware.isLoggedIn, function(req, res) {
       console.log(err);
     } else {
       // Redirect back to events page
-      console.log(newlyCreatedEvent);
       res.redirect('/events');
     }
   });
@@ -51,7 +50,6 @@ router.get('/:id', function(req, res) {
     if (err) {
       console.log(err);
     } else {
-      console.log(event)
       // Render the event page
       res.render('events/show', { event: event });
     }
